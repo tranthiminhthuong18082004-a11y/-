@@ -291,10 +291,27 @@ export default function App() {
     : false;
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900 transition-colors duration-300">
+    <div className="min-h-screen bg-slate-50/40 relative flex flex-col font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900 transition-colors duration-300">
       
+      {/* Cool premium ambient background - elegant grids & glowing biological blobs */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden select-none" aria-hidden="true">
+        {/* Soft elegant glowing gradient meshes */}
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-emerald-400/15 blur-[120px] animate-pulse duration-[8000ms]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] rounded-full bg-sky-300/20 blur-[150px]" />
+        <div className="absolute top-[40%] right-[15%] w-[35%] h-[35%] rounded-full bg-amber-200/10 blur-[100px] animate-pulse duration-[12000ms]" />
+        <div className="absolute bottom-[20%] left-[5%] w-[40%] h-[40%] rounded-full bg-teal-300/10 blur-[130px]" />
+
+        {/* Minimalist Tech Dot Grid overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1.5px,transparent_1.5px)] [background-size:32px_32px] opacity-70 mix-blend-multiply" />
+        
+        {/* Subtle grid lines */}
+        <div className="absolute left-[5%] right-[5%] top-0 h-px bg-slate-200/40" />
+        <div className="absolute left-[20%] top-0 bottom-0 w-px bg-slate-200/20" />
+        <div className="absolute right-[20%] top-0 bottom-0 w-px bg-slate-200/20" />
+      </div>
+
       {/* Dynamic Header - High-end minimalist design */}
-      <nav className="h-20 bg-white border-b border-slate-200 px-6 sm:px-10 flex items-center justify-between shrink-0 sticky top-0 z-50">
+      <nav className="h-20 bg-white/95 backdrop-blur-md border-b border-slate-200/80 px-6 sm:px-10 flex items-center justify-between shrink-0 sticky top-0 z-50">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-emerald-500/10">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.2" viewBox="0 0 24 24">
@@ -407,7 +424,7 @@ export default function App() {
       </nav>
 
       {/* Main Grid Workspace */}
-      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <main className="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start relative z-10">
         
         {activeTab === "scanner" && (
           <>
@@ -560,7 +577,7 @@ export default function App() {
         )}
       </main>
 
-      <footer className="mt-auto py-8 border-t border-slate-200 text-center tracking-wide text-xs text-slate-400 bg-white leading-relaxed">
+      <footer className="mt-auto py-8 border-t border-slate-200/80 text-center tracking-wide text-xs text-slate-400 bg-white/70 backdrop-blur-md leading-relaxed relative z-10">
         <p className="font-semibold text-slate-500">NutriScanAI • Clean Minimalist Diet Assistant</p>
         <p className="mt-1">Powered by Server-Side Gemini 3.5 Flash Vision. Real portion estimates.</p>
       </footer>
